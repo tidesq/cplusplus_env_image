@@ -8,4 +8,4 @@ image_name="cplusplus-dev-base"
 #sudo docker run -d --name=${USER} --net=host -u `id -u`:`id -g` -v /etc/passwd:/etc/passwd:ro -v /etc/shadow:/etc/shadow -v /etc/group:/etc/group -v ${HOME}:${HOME} -w `pwd` -it ${image_name}:${tag}   /bin/bash
 #docker run -d --name=${USER} --net=host -u "admin" -v /etc/passwd:/etc/passwd:ro -v /etc/shadow:/etc/shadow -v /etc/group:/etc/group -v ${HOME}:${HOME} -w `pwd` -it ${image_name}:${tag}   /bin/bash
 
-docker run -d --name=${USER} --net=host -u "admin:admin"  -v ${HOME}:${HOME} -w `pwd` -it ${image_name}:${tag}   /bin/bash
+docker run -d --name=graph_engine_dev --net=host  --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -v /work/15-project_pdd:/root/project -v /work/16-workspace:/root/workspace  -w /root/ -it ${image_name}:${tag}   /bin/bash
